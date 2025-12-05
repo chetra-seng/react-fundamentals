@@ -1,0 +1,104 @@
+/* Custom dot pagination indicator */
+.slidev-page-indicator {
+  position: fixed;
+  bottom: 1rem;
+  right: 1rem;
+  display: flex;
+  gap: 0.5rem;
+  z-index: 10;
+}
+
+.slidev-page-indicator::before {
+  content: attr(data-current);
+  display: inline-block;
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background-color: #3b82f6;
+  box-shadow: 0 0 4px rgba(59, 130, 246, 0.5);
+}
+
+.slidev-page-indicator::after {
+  content: '/ ' attr(data-total);
+  font-size: 0.7rem;
+  color: #94a3b8;
+  margin-left: 0.3rem;
+  opacity: 0.6;
+}
+
+/* Alternative: Just dots without numbers */
+.slidev-page-dots {
+  position: fixed;
+  bottom: 1rem;
+  right: 1rem;
+  display: flex;
+  gap: 0.3rem;
+  z-index: 10;
+}
+
+.slidev-page-dots .dot {
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background-color: #cbd5e1;
+  transition: all 0.3s ease;
+}
+
+.slidev-page-dots .dot.active {
+  background-color: #3b82f6;
+  transform: scale(1.5);
+  box-shadow: 0 0 6px rgba(59, 130, 246, 0.6);
+}
+
+/* Minimal progress bar with dot */
+.slidev-progress-indicator {
+  position: fixed;
+  bottom: 1rem;
+  right: 1rem;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  z-index: 10;
+}
+
+.slidev-progress-indicator .progress-bar {
+  width: 60px;
+  height: 3px;
+  background-color: #e2e8f0;
+  border-radius: 2px;
+  overflow: hidden;
+}
+
+.slidev-progress-indicator .progress-fill {
+  height: 100%;
+  background-color: #3b82f6;
+  transition: width 0.3s ease;
+}
+
+.slidev-progress-indicator .dot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background-color: #3b82f6;
+  box-shadow: 0 0 4px rgba(59, 130, 246, 0.5);
+  animation: pulse 2s infinite;
+}
+
+@keyframes pulse {
+  0%, 100% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0.5;
+  }
+}
+
+/* Override default Slidev page number styling */
+.slidev-layout .slidev-page-indicator,
+.slidev-layout .slidev-page-number {
+  font-size: 0;
+}
+
+.slidev-layout .slidev-page-indicator::before {
+  font-size: 0.7rem;
+}

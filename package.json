@@ -1,0 +1,19 @@
+{
+  "name": "react-course",
+  "version": "1.0.0",
+  "description": "React Fundamentals Course - Slidev Presentation",
+  "type": "module",
+  "scripts": {
+    "dev": "slidev",
+    "build": "slidev build",
+    "export": "slidev export"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "packageManager": "pnpm@10.24.0",
+  "dependencies": {
+    "@slidev/cli": "^52.10.1",
+    "@slidev/theme-default": "latest"
+  }
+}
