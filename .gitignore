@@ -1,3 +1,4 @@
 .git
 .claude
 node_modules
+dist
